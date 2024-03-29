@@ -32,7 +32,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: 'login',
+        path: '/login',
         element: (
           <AuthLayout authentication={false}>
             <Suspense fallback={<div>Loading...</div>}>
