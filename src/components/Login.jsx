@@ -1,6 +1,4 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-empty */
-/* eslint-disable no-unused-vars */
+
 import { login as authLogin } from '../features/authSlice/authSlice'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
@@ -19,7 +17,7 @@ export default function Login() {
             const session = authService.loginUser(data) // return a session
             if (session) {
                 //getCurrentUser : --> return current userData if login 
-                const userData = await authService.getCurrentUser(); 
+                const userData = await authService.getCurrentUser();
                 if (userData) {
                     dispatch(authLogin(userData))
                     navigate('/')
@@ -35,22 +33,16 @@ export default function Login() {
         <div
             className='flex items-center justify-center w-full'
         >
-            <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
+            <div className={`border-[2px] border-black dark:border-cyan-100 mx-auto w-full max-w-lg dark:bg-zinc-800 rounded-xl p-10 bg-slate-300`}>
                 <div className="mb-2 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
-                        <Logo width="100%" />
+                        <Logo
+                            width="100%"
+                        />
                     </span>
                 </div>
-                <h2 className="text-center text-2xl font-bold leading-tight">Sign in to your account</h2>
-                <p className="mt-2 text-center text-base text-black/60">
-                    Don&apos;t have any account?&nbsp;
-                    <Link
-                        to="/signup"
-                        className="font-medium text-primary transition-all duration-200 hover:underline"
-                    >
-                        Sign Up
-                    </Link>
-                </p>
+                <h2 className="text-center text-2xl font-bold leading-tight text-blue-400  pt-2">Sign in to your account</h2>
+
                 {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
                 <form onSubmit={handleSubmit(login)} className='mt-8'>
                     <div className='space-y-5'>
@@ -78,6 +70,15 @@ export default function Login() {
                             type="submit"
                             className="w-full"
                         >Sign in</Button>
+                        <p className="mt-2 text-center text-base text-black/60 text-slate-300">
+                            Don&apos;t have any account?&nbsp;
+                            <Link
+                                to="/signup"
+                                className="font-medium text-primary transition-all duration-200 hover:underline text-blue-400 decoration-transparent"
+                            >
+                                Sign Up
+                            </Link>
+                        </p>
                     </div>
                 </form>
             </div>

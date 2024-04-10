@@ -37,25 +37,29 @@ function Header() {
     },
   ]
   return (
-    <header>
+    <header className=' fixed w-screen'>
       <Container>
-        <nav className="flex items-center justify-between p-4">
+        <nav className="flex items-center  justify-between p-4 z-10">
           <div className="mr-4">
             <Link to='/'>
-              <Logo widht="70px" />
+              <Logo
+                widht="70px"
+                LogoName='B.'
+                className="text-white font-sans tracking-wider uppercase text-6xl text-stroke "
+              />
             </Link>
           </div>
-          <ul className='flex px-4 items-center justify-center'>
+          <ul className='flex items-center text-center justify-between border-[2px] min-w-[28vw]  bg-[#c4c4c4]  dark:bg-[#1b2728] rounded-md py-3 px-2 h-full dark:border-[#dbdbdb] border-[#121e19]'>
             {
               navItems.map((items) => (
                 items.active ? (
-                  <li key={items.name} className='list-none text-center'>
+                  <li key={items.name} className='list-none text-center '>
                     <NavLink
                       to={items.slug}
                       onClick={() => navigate(items.slug)}
-                      /* className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" */
+
                       className={({ isActive }) => `
-                       ${isActive ? 'text-orange-700 bg-slate-200 rounded-sm border-sky-300' : 'text-gray-700'}  duration-200   hover:text-blue-500  px-4`}
+                       ${isActive ? 'dark:bg-[#228663] rounded-sm  py-2 px-5 dark:hover:bg-[#228663]  bg-slate-900 text-white ' : 'dark:hover:bg-slate-500 hover:bg-slate-500'}  py-2 px-5 rounded-sm text-[1.1rem] text-slate-900 dark:text-slate-50 `}
                     >{items.name}</NavLink>
                   </li>
 

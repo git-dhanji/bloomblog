@@ -21,6 +21,8 @@ class AuthService {
         password,
         name
       );
+
+      
       if (userAccount) {
         return this.loginUser(email, password);
       } else {

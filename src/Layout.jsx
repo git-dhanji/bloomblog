@@ -25,7 +25,7 @@ export default function Layout() {
   }, [dispatch])
 
   return !loader ? (
-    <div className="max-h-full min-h-screen  w-screen overflow-x-hidden">
+    <div className="max-h-full min-h-screen  w-screen  dark:bg-slate-800 bg-[#cfcfcf] ">
 
       {/* Header section is start here */}
       <header>
@@ -33,12 +33,12 @@ export default function Layout() {
       </header>
 
       {/* Main Section is Start here */}
-      <main className="mx-auto w-screen">
+      <main className="mx-auto py-28">
         <Outlet />
       </main>
 
       {/* Footer Section is start here */}
-      <footer >
+      <footer className="">
         <Footer />
       </footer>
 
