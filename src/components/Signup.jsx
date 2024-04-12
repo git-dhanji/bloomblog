@@ -26,12 +26,13 @@ export default function Signup() {
                 }
             }
         } catch (error) {
+            console.log(error)
             setError(error.message)
         }
     }
     return (
         <div className="flex items-center justify-center ">
-            <div className={`border-[2px] border-black dark:border-cyan-100 mx-auto w-full max-w-lg dark:bg-zinc-800 rounded-xl p-10 bg-slate-300`}>
+            <div className={`border-[2px] border-black dark:border-cyan-100 mx-auto w-full max-w-md dark:bg-zinc-800 rounded-xl p-10 bg-slate-300`}>
                 <div className="mb-2 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
                         <Logo 

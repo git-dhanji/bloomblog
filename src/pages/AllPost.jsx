@@ -5,7 +5,7 @@ import { Container, PostCard } from '../components/index'
 export default function AllPost() {
     const [posts, setPosts] = useState([])
     useEffect(() => {
-        appwriteService.AllPost([]).then((posts) => {
+        appwriteService.getPostCollection([]).then((posts) => {
             if (posts) setPosts(posts.document)
 
         })

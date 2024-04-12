@@ -33,7 +33,7 @@ export default function Login() {
         <div
             className='flex items-center justify-center w-full'
         >
-            <div className={`border-[2px] border-black dark:border-cyan-100 mx-auto w-full max-w-lg dark:bg-zinc-800 rounded-xl p-10 bg-slate-300`}>
+            <div className={`border-[2px] border-black dark:border-cyan-100 mx-auto w-full max-w-md dark:bg-zinc-800 rounded-xl p-10 bg-slate-300`}>
                 <div className="mb-2 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
                         <Logo
@@ -46,6 +46,7 @@ export default function Login() {
                 {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
                 <form onSubmit={handleSubmit(login)} className='mt-8'>
                     <div className='space-y-5'>
+                        
                         <Input
                             label="Email: "
                             placeholder="Enter your email"
@@ -58,10 +59,13 @@ export default function Login() {
                                 }
                             })}
                         />
+
+        
                         <Input
                             label="Password: "
                             type="password"
                             placeholder="Enter your password"
+                            
                             {...register("password", {
                                 required: true,
                             })}

@@ -15,7 +15,7 @@ export default function Home() {
     if (posts.length <= 0) {
         return (
             <Container>
-                <div className='flex flex-wrap w-full h-screen bg-red-500 items-center justify-center'>
+                <div className='flex flex-wrap w-full h-screen items-center justify-center bg-slate-500'>
                     <div className="p-2 w-full text-center ">
                         <h1 className='text-2xl font-bold hover:text-gray-500'>
                             Login to read posts
